@@ -14,9 +14,19 @@ export const GiftsApp = () => {
     console.log({term});
   }
 
-  const handleSearch = (query: string) => {
+  const handleSearch = (query: string = '') => {
+    query = query.trim().toLowerCase();
+
+    if(query.trim().length === 0) return;
+
+    if (previousTerms.includes(query)) return;
+
+    setPreviousTerms([query, ...previousTerms].slice(0, 8));
+    
+
+
     console.log({query})
-  }
+  };
 
   return (
     <>
