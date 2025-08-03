@@ -22,8 +22,7 @@ export const GifList: FC<Props> = ({  gifs }) => {
                         <p>
                             {  gif.width } x { gif.height } (1.5md)
                         </p>
-                    </div>
-                    
+                    </div>                   
                 ))
             }
 
