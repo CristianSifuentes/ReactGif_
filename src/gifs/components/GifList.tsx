@@ -7,7 +7,7 @@ import type { Gif } from "../interfaces/gif.interface";
 interface Props {
   gifs: Gif[];
 }
-
+//type FC<P = {}> = FunctionComponent<P>;
 // export const GifList = ({  gifs }: Props) => {
 export const GifList: FC<Props> = ({  gifs }) => {
 
