@@ -4,6 +4,7 @@ import { PreviousSearches } from "./gifs/components/PreviousSearches";
 import { mockGifs } from "./mock-data/gifs-mock";
 import { CustomHeader } from "./shared/components/CustomHeader";
 import { SearchBar } from "./shared/components/SearchBar";
+import { getGifsByQuery } from "./gifs/actions/get-gifs-by-query.action";
 
 export const GiftsApp = () => {
 
@@ -24,12 +25,24 @@ export const GiftsApp = () => {
   // you can use this function to perform some action when the user submits a search query
   // for example, you can call the API with the query value or update the state with the query value
   // you can also use this function to filter the previous search terms and display only the relevant ones
-  const handleSearch = (query: string = '') => {
+  const handleSearch = async (query: string = '') => {
     query = query.trim().toLowerCase();
     if(query.trim().length === 0) return;
     if (previousTerms.includes(query)) return;
     setPreviousTerms([query, ...previousTerms].slice(0, 8));
-    console.log({query})
+    // console.log({query})
+
+        const gifs = await getGifsByQuery(query);
+        console.log({gifs});
+    
+
+    // await getGifsByQuery(query);
+    
+
+//     Validar que el query no esté vacío
+// Convertir el query a minúsculas y eliminar espacios en blanco
+// Evitar búsquedas duplicadas verificando si el término ya existe en previousTerms ( si existe, no hacer nada )
+// Actualizar previousTerms agregando el nuevo término al inicio y limitando a 8 elementos máximo, es decir no puede ser un arreglo de más de 8.
   };
 
   return (
