@@ -67,3 +67,7 @@ export default tseslint.config([
   },
 ])
 ```
+
+
+https://github.com/samanthaming/Flexbox30?tab=readme-ov-file#justify-content-column
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/#aa-examples
