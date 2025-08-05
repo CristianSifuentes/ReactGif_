@@ -5,11 +5,12 @@ import { mockGifs } from "./mock-data/gifs-mock";
 import { CustomHeader } from "./shared/components/CustomHeader";
 import { SearchBar } from "./shared/components/SearchBar";
 import { getGifsByQuery } from "./gifs/actions/get-gifs-by-query.action";
+import type { Gif } from "./gifs/interfaces/gif.interface";
 
 export const GiftsApp = () => {
 
-
-  const [previousTerms, setPreviousTerms] = useState(['Dragon Ball Z'])
+  const [gifs, setGifs] = useState<Gif[]>([]);
+  const [previousTerms, setPreviousTerms] = useState(['Dragon Ball Z']);
 
   // handleTermClicked - this function is called when a previous search term is clicked
   // it receives the term as an argument and logs it to the console
@@ -32,9 +33,10 @@ export const GiftsApp = () => {
     setPreviousTerms([query, ...previousTerms].slice(0, 8));
     // console.log({query})
 
+        // const gifs = await getGifsByQuery(query);
+        // console.log({gifs});
         const gifs = await getGifsByQuery(query);
-        console.log({gifs});
-    
+        setGifs(gifs);
 
     // await getGifsByQuery(query);
     
@@ -57,9 +59,13 @@ export const GiftsApp = () => {
         <PreviousSearches searches={previousTerms}   onLabelClicked={handleTermClicked}></PreviousSearches>
 
         { /* Gifs */ }
-        <GifList gifs={mockGifs}></GifList>
+        <GifList gifs={gifs}></GifList>
         
         </>
 
   )
 }
+
+
+// Debouncing is a programming technique used to ensure a function is executed only once after a
+//  certain period of time since the last time it was triggered

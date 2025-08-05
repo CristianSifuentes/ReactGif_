@@ -53,9 +53,9 @@ export const SearchBar = ({placeholder='Search', onQuery}: Props) => {
   );
 
   const handleKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
-              // if(event.key === 'Enter'){
-                handleSearch();
-              // }
+      if (event.key === 'Enter') {
+      handleSearch();
+    }
   }
   
   return (

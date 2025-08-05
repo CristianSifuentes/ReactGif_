@@ -1,5 +1,4 @@
 
-import axios from "axios";
 import type { GiphyGif, GiphyResponse } from "../interfaces/giphy.response";
 import type { Gif } from "../interfaces/gif.interface";
 import { giphyApi } from "../api/giphy.api";
@@ -12,7 +11,7 @@ export const getGifsByQuery = async (query: string): Promise<Gif[]> => {
             limit: 25,
             offset: 0,
             rating: 'g',
-            lang: 'en',
+            // lang: 'en',
             bundle: 'messaging_non_clips'
         }
     });
