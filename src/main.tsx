@@ -2,9 +2,11 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import { GiftsApp } from './GiftsApp' 
+// import { MyCounterApp } from './counter/components/MyCounterApp'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <div><GiftsApp/></div>
+    <div><GiftsApp/></div>  
+    {/* <MyCounterApp></MyCounterApp>  */}
   </StrictMode>,
 )
