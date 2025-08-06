@@ -6,6 +6,7 @@ interface Props {
 
 }
 
+// https://api.giphy.com/v1/gifs/search?lang=es&api_key=IdvFByhuq0EcabV8oUh8kjLd9Eguiuz4&q=goku&limit=10
 export const PreviousSearches: FC<Props> = ( {searches, onLabelClicked} ) => {
 
   return (
