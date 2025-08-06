@@ -5,7 +5,7 @@ export interface GiphyResponse {
 }
 
 export interface GiphyGif {
-    type:                       Type;
+    // type:                       Type;
     id:                         string;
     url:                        string;
     slug:                       string;
@@ -64,17 +64,21 @@ export interface FixedHeight {
     hash?:     string;
 }
 
-export enum Rating {
-    G = "g",
-}
+export type Rating = "g" | "pg" | "pg-13" | "r" | "y" | "y-7" | "g-7" | "g-13";
 
-export enum TrendingDatetimeEnum {
-    The00000000000000 = "0000-00-00 00:00:00",
-}
+// export enum Rating {
+//     G = "g",
+// }
 
-export enum Type {
-    GIF = "gif",
-}
+export type TrendingDatetimeEnum = 'gif' | 'video' | '0000-00-00 00:00:00' | 'now' | 'today' | 'yesterday' | 'last_7_days' | 'last_30_days' | 'last_365_days';
+
+// export enum TrendingDatetimeEnum {
+//     The00000000000000 = "0000-00-00 00:00:00",
+// }
+
+// export enum Type {
+//     GIF = "gif",
+// }
 
 export interface User {
     avatar_url:    string;
