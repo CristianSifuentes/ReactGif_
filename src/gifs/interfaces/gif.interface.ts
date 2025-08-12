@@ -5,3 +5,5 @@ export interface Gif {
   width: number;
   height: number;
 }
+
+
